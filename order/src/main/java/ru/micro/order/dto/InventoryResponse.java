@@ -9,9 +9,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class OrderLineDto {
-    private Long id;
+public class InventoryResponse {
     private String skuCode;
-    private int price;
-    private int quantity;
+    private boolean isInStock;
 }

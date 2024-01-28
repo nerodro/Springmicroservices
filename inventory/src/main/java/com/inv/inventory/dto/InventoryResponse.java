@@ -1,4 +1,4 @@
-package ru.micro.order.dto;
+package com.inv.inventory.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,9 +9,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class OrderLineDto {
-    private Long id;
+public class InventoryResponse {
     private String skuCode;
-    private int price;
-    private int quantity;
+    private boolean isInStock;
 }
