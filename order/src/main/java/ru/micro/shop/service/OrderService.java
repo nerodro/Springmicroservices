@@ -20,7 +20,7 @@ import java.util.UUID;
 @Transactional
 public class OrderService implements  IOrderService{
     private final IOrderRepository _orderRepo;
-    private final WebClient _webClient;
+    private final WebClient.Builder _webClient;
     @Override
     public void createOrder(OrderDto orderDto) {
         Order order = new Order();
@@ -31,8 +31,8 @@ public class OrderService implements  IOrderService{
         List<String> codes = order.getOrderLineItems().stream()
                 .map(OrderLineItems::getSkuCode)
                 .toList();
-        InventoryResponse[] result = _webClient.get()
-                .uri("http://localhost:8082/api/v1/inventory",
+        InventoryResponse[] result = _webClient.build().get()
+                .uri("http://inventory:8082/api/v1/inventory",
                         uriBuilder -> uriBuilder.queryParam("skuCode", codes).build())
                 .retrieve().bodyToMono(InventoryResponse[].class).block();
 

@@ -31,7 +31,7 @@ public class InventoryService {
             return list;
         }
         else {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("product not found");
         }
 
     }
