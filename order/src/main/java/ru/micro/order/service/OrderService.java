@@ -1,5 +1,6 @@
 package ru.micro.order.service;
 
+import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -14,6 +15,7 @@ import java.util.UUID;
 
 @AllArgsConstructor
 @Service
+@Transactional
 public class OrderService implements  IOrderService{
     private final IOrderRepository _orderRepo;
     @Override
