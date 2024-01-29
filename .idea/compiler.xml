@@ -10,12 +10,14 @@
         <module name="ShowMicro" />
         <module name="discovery-server" />
         <module name="inventory" />
+        <module name="GateWay" />
         <module name="order" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="GateWay" options="-parameters" />
       <module name="ShowMicro" options="-parameters" />
       <module name="discovery-server" options="-parameters" />
       <module name="inventory" options="-parameters" />
